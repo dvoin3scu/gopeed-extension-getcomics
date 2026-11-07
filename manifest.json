@@ -1,0 +1,39 @@
+{
+  "name": "getcomics",
+  "author": "dvoin3scu",
+  "title": "GetComics",
+  "description": "Resolve GetComics posts and Main Server links to the real comic file, with its real name. Falls back to Pixeldrain and Mediafire.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/dvoin3scu/gopeed-extension-getcomics",
+  "repository": {
+    "url": "https://github.com/dvoin3scu/gopeed-extension-getcomics"
+  },
+  "scripts": [
+    {
+      "event": "onResolve",
+      "match": {
+        "urls": [
+          "*://getcomics.org/*",
+          "*://www.getcomics.org/*",
+          "*://getcomics.info/*",
+          "*://www.getcomics.info/*"
+        ]
+      },
+      "entry": "index.js"
+    }
+  ],
+  "settings": [
+    {
+      "name": "order",
+      "title": "Host order (comma-separated: main, pixeldrain, mediafire)",
+      "type": "string",
+      "value": "main,pixeldrain,mediafire"
+    },
+    {
+      "name": "allLinks",
+      "title": "Post pages: download every link of the chosen host (off = first only)",
+      "type": "boolean",
+      "value": true
+    }
+  ]
+}
