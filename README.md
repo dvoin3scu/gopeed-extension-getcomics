@@ -17,3 +17,6 @@ Gopeed → Extensions → Install → `https://github.com/dvoin3scu/gopeed-exten
 
 ## Notes
 The page parsing relies on GetComics' button titles and labels (`DOWNLOAD NOW` / `Main Server`, `PIXELDRAIN`, `MEDIAFIRE`). If GetComics changes its markup, `findLinks` / `classify` in `index.js` are the places to adjust.
+
+## Firefox userscript
+`userscript/getcomics-to-gopeed.user.js` (Violentmonkey or Tampermonkey) adds a "Send post to Gopeed" button on GetComics posts and a "→ Gopeed" button next to each Main Server link. It calls the Gopeed API (resolve, then create task), so this extension does the resolving on the server. Set the API token in the userscript menu ("Gopeed: set API token").
